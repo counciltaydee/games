@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulsebox — Drum Machine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>PULSEBOX</span>
+        </div>
+        <div class="status">
+          <span class="status-dot"></span>
+          <span id="statusText">READY TO PLAY</span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">01 / STEP SEQUENCER</p>
+          <h1>Make some <em>noise.</em></h1>
+          <p class="intro">Tap in a beat, press play, and let the loop do the talking.</p>
+        </div>
+        <div class="hero-badge" aria-hidden="true">
+          <span>LIVE</span>
+          <strong id="bpmBadge">110</strong>
+          <small>BPM</small>
+        </div>
+      </section>
+
+      <section class="controls panel" aria-label="Transport controls">
+        <button class="play-button" id="playButton" type="button" aria-label="Play">
+          <span class="play-icon">▶</span>
+          <span id="playLabel">PLAY</span>
+        </button>
+        <button class="stop-button" id="stopButton" type="button">STOP</button>
+        <div class="control-divider"></div>
+        <label class="slider-control">
+          <span class="control-label">TEMPO</span>
+          <input id="tempoSlider" type="range" min="70" max="160" value="110" />
+          <output id="tempoValue" for="tempoSlider">110 BPM</output>
+        </label>
+        <label class="slider-control compact">
+          <span class="control-label">SWING</span>
+          <input id="swingSlider" type="range" min="0" max="55" value="0" />
+          <output id="swingValue" for="swingSlider">0%</output>
+        </label>
+        <button class="ghost-button" id="clearButton" type="button">CLEAR ALL</button>
+        <button class="ghost-button accent-text" id="randomButton" type="button">↗ RANDOMIZE</button>
+      </section>
+
+      <section class="sequencer panel" aria-label="Drum sequencer">
+        <div class="grid-header">
+          <div class="track-heading">TRACKS <span>× 16 STEPS</span></div>
+          <div class="step-numbers" id="stepNumbers"></div>
+        </div>
+        <div id="trackRows"></div>
+        <div class="sequencer-footer">
+          <span><kbd>SPACE</kbd> play / pause</span>
+          <span><kbd>R</kbd> randomize</span>
+          <span id="stepReadout">STEP 01 / 16</span>
+        </div>
+      </section>
+
+      <section class="tip-card">
+        <span class="tip-icon">⌁</span>
+        <p><strong>Start simple.</strong> Every good groove begins with a kick on the one.</p>
+        <span class="tip-decoration">✳</span>
+      </section>
+
+      <footer>
+        <span>PULSEBOX / 2024</span>
+        <span>BUILT FOR THE BROWSER</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
